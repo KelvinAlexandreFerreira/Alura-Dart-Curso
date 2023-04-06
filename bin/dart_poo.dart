@@ -6,15 +6,6 @@ void main() {
   int diasDesdeColheita = 40;
   bool isMadura = funcEstaMaduro(diasDesdeColheita); 
 
-  //print(isMadura);
-
-  //mostrarMadura("Uva", 40, cor:"Roxa");
-
-  //int quantosDias = funcQuantosDiasMadura(diasDesdeColheita);
-  //print(quantosDias);
-
-  //funcRecursiva(0, 10); 
-
   Fruta fruta01 = Fruta(nome, peso, cor, sabor, diasDesdeColheita);
   Fruta fruta02 = Fruta("uva", 40, "Roxa", "Doce", 20);
 
@@ -22,12 +13,6 @@ void main() {
   fruta02.estaMadura(60);
   
 }
-
-/*Parâmetros dart:
-  Posicionais Obrigatórios
-  Nomeados Opcionais 
-  Parâmetros “Padrão”
-  Modificador “required”*/
 
 mostrarMadura(String nome, int dias, {String? cor}) {
   if (dias >= 30) {
