@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.dart": "dart"
+    },
+    "[dart]": {
+        "files.autoGuessEncoding": false,
+        "files.encoding": "utf8"
+    }
+}
+
