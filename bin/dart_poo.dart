@@ -13,6 +13,22 @@ void main() {
 
   fruta01.estaMadura(30);
   fruta02.estaMadura(60);
+
+  Legumes mandioca = Legumes('Macaxeira', 1200, 'Marrom', true);
+  Fruta banana = Fruta('Banana', 75, 'Amarela', 'Doce', 12);
+  Nozes macadamia = Nozes('Macadâmia', 2, 'Branco Amarelado', 'Doce', 20, 35);
+  Citricas limao = Citricas('Limão', 50, 'Verde', 'Azedo', 5, 9);
+
+  mandioca.printAlimento();
+  banana.printAlimento();
+  mandioca.printAlimento();
+  limao.printAlimento();
+
+  mandioca.cozinhar();
+  // limao.cozinhar(); //não funciona
+  // mandioca.fazerSuco(); //não funciona
+  limao.fazerSuco();
+
   
 }
 
@@ -64,7 +80,7 @@ class Fruta extends Alimento{
   }
 
   void fazerSuco(){
-    print('Você fez um ótimo suco de $nome.')
+    print('Você fez um ótimo suco de $nome.');
   }
 }
 
@@ -89,29 +105,29 @@ class Legumes extends Alimento{
     if (isPrecisaCozinhar) {
       print('Pronto, o $nome está cozinhando!');
     }else{
-      print('Nem precisa cozinhar!')
+      print('Nem precisa cozinhar!');
     }
   }
 }
 
-class Citricas {
-  String nome;
-  double peso;
-  String cor;
-  int diasDesdeColheita;
-  bool? isMadura;
+class Citricas extends Fruta{
   double nivelAzedo;  
 
-  Citricas(this.nome, this.peso, this.cor, this.diasDesdeColheita, this.nivelAzedo);
+  Citricas(String nome, double peso, String cor, String sabor, int diasDesdeColheita, this.nivelAzedo)
+    : super(nome, peso, cor, sabor, diasDesdeColheita);
+
+  void existeRefri(bool existe){
+    if (existe) {
+      print('Existe Refrigerante de $nome.');
+    }else{
+      print('Não existe Refri de $nome.');
+    }
+  }
 }
 
-class Nozes {
-  String nome;
-  double peso;
-  String cor;
-  int diasDesdeColheita;
-  bool? isMadura;
+class Nozes extends Fruta{
   double porcentagemOleoNatural;  
 
-  Nozes(this.nome, this.peso, this.cor, this.diasDesdeColheita, this.porcentagemOleoNatural);  
+  Nozes(String nome, double peso, String cor, String sabor, int diasDesdeColheita, this.porcentagemOleoNatural)
+    : super(nome, peso, cor, sabor, diasDesdeColheita);  
 }
