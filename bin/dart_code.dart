@@ -3,11 +3,21 @@ void main(List<String> args) {
 
   Set<String> registrosVisitados = <String>{};
   registrosVisitados = registrarDestinos("Rio de Janeiro", registrosVisitados);
-  registrosVisitados = registrarDestinos("Recife", registrosVisitados);
-  registrosVisitados = registrarDestinos("São Paulo", registrosVisitados);
-  registrosVisitados = registrarDestinos("Rio de Janeiro", registrosVisitados);
+
+  Map<String,dynamic> registrarPrecos = {};
+
+  registrarPrecos["São Paulo"] = 1200;
+  registrarPrecos["Rio de Janeiro"] = 1500;
+  registrarPrecos["São Paulo"] = 1900;
+  registrarPrecos["Nova Iorque"] = "Muito Caro!";
+
+  registrarPrecos.remove("Rio de Janeiro");
 
   print(registrosVisitados);
+  print(registrarPrecos);
+  print(registrarPrecos["São Paulo"]);
+  print(registrarPrecos["Tocantins"]);
+
 }
 
 Set<String> registrarDestinos(String destino, Set<String> banco){
