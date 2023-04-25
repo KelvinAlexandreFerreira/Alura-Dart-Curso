@@ -26,6 +26,13 @@ void main(List<String> args) {
   meuNumero= "STRING QUALQUER";
   print(meuNumero.runtimeType);
 
+  Viagem viagemHoje = Viagem();
+  Viagem.codigoTrabalho;
+}
+
+class Viagem{
+  static String codigoTrabalho = "DJNADS12";
+  double dinheiro = 0;
 }
 
 class Pessoa {
