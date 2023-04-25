@@ -18,6 +18,25 @@ void main(List<String> args) {
   print(registrarPrecos["São Paulo"]);
   print(registrarPrecos["Tocantins"]);
 
+  Pessoa pesssoa1 = Pessoa("Marcos", 22, true);
+  print(pesssoa1.toMap());
+
+}
+
+class Pessoa {
+  String nome;
+  int idade;
+  bool estaAutenticada;
+
+  Pessoa(this.nome, this.idade, this.estaAutenticada);
+
+  Map<String, dynamic> toMap(){
+    Map<String, dynamic> resultado = {};
+    resultado["nome"] = this.nome;
+    resultado["idade"] = this.idade;
+    resultado["estaAutenticada"] = this.estaAutenticada;
+    return resultado;
+  }
 }
 
 Set<String> registrarDestinos(String destino, Set<String> banco){
