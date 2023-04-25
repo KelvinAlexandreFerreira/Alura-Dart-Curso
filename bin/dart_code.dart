@@ -13,13 +13,18 @@ void main(List<String> args) {
 
   registrarPrecos.remove("Rio de Janeiro");
 
-  print(registrosVisitados);
-  print(registrarPrecos);
-  print(registrarPrecos["São Paulo"]);
-  print(registrarPrecos["Tocantins"]);
+  //print(registrosVisitados);
+  //print(registrarPrecos);
+  //print(registrarPrecos["São Paulo"]);
+  //print(registrarPrecos["Tocantins"]);
 
   Pessoa pesssoa1 = Pessoa("Marcos", 22, true);
-  print(pesssoa1.toMap());
+  //print(pesssoa1.toMap());
+
+  dynamic meuNumero = 7.1;
+  print(meuNumero.runtimeType);
+  meuNumero= "STRING QUALQUER";
+  print(meuNumero.runtimeType);
 
 }
 
