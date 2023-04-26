@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'transporte.dart';
 
 class Viagem{
@@ -7,7 +9,7 @@ class Viagem{
   Set<String> registrosVisitados = <String>{};
   Map<String,dynamic> registrarPrecos = {};
 
-  int _totalLocaisVisitados = 51651;
+  int _totalLocaisVisitados = 0;
 
   Viagem({required this.locomocao});
 
@@ -24,16 +26,17 @@ class Viagem{
         print("Vou de BIKE para aventura!");  
         break;
       case Transporte.onibus:
-        print("Vou de BUSÃO para aventura!");  
+        print("Vou de BUSÃO para aventura!");  
         break;
       default:
-        print("Estou indo para aventura, isso é o que importa!");
+        print("Estou indo para aventura, isso Ã© o que importa!");
         break;
     }
   }
 
   void visitar(String localVisita){
     registrosVisitados.add(localVisita);
+    _totalLocaisVisitados += 1;
   }
 
   void registrarPrecoVisita(String local, dynamic preco){
@@ -42,6 +45,14 @@ class Viagem{
 
   int get consultarTotalLocaisVisitados{
     return _totalLocaisVisitados;
+  }
+
+  void set alterarLocaisVisitados(int novaQnd){
+    if (novaQnd < 10) {
+      _totalLocaisVisitados = novaQnd;  
+    }else{
+      print("Não é possível!");
+    } 
   }
 }
 
