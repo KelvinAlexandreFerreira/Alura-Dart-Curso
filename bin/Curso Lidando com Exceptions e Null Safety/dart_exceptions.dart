@@ -9,6 +9,8 @@ void main() {
   BankController bankController = BankController();
 
   // Adicionando contas
+  //Account accountTest = Account(name: "Kelvin", balance: -20, isAuthenticated: true);
+
   bankController.addAccount(
       id: "Ricarth",
       account:
