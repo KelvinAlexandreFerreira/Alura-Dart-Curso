@@ -40,6 +40,7 @@ void functionTwo(){
   print("Started F02");
   for (var i = 1 ; i < 5; i++) {
     print(i);  
+    double amount = double.parse("Not a Number");
   }
   print("Finished F02"); 
 }
