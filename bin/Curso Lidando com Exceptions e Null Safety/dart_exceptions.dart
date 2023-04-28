@@ -1,25 +1,23 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'controllers/bank_controller.dart';
 import 'exceptions/bank_controller_exceptions.dart';
 import 'models/account.dart';
 
+void testingNullSafety(){
+  Account? myAccount;
+
+  //Simulando uma comunicação externa
+  Random rng = Random();
+  int randomNumber = rng.nextInt(10);
+  if(randomNumber <= 5){
+    myAccount = Account(name: "Kelvin", balance: 700, isAuthenticated: true);
+  }
+}
+
 void main() {
-  //print("MysTring".runtimeType);
-  //print(null.runtimeType);
-  //Null;
-
-  String naoPodeSerNula = "MyString";
-  //naoPodeSerNula = null;
-
-  String? podeSerNula = "MyString";
-  print(podeSerNula.runtimeType);
-  podeSerNula = null;
-  print(podeSerNula.runtimeType);
-
-  Account? myNullAccount;
-
-  print(myNullAccount.balance);
+  testingNullSafety();
 
   // Criando o banco
   BankController bankController = BankController();
