@@ -36,18 +36,12 @@ void functionOne(){
   print("Started F01");
   try {
     functionTwo();
-  } on FormatException catch(e) {
-    print("A conversão não pôde ser feita.");
-    print(e.message);
-    print(e.source);
-    print(e.toString());
-  } on HttpException catch (e){
-    print(e.toString());
-  } on IOException catch (e){
-    print("Uma IOEXception foi encontrada.");
-    print(e.toString());
-  } on Exception catch (e){
-    print(e.toString());
+  } catch(exception, stackTrace){
+    print(exception);
+    print(stackTrace);
+    rethrow; //É usado para propagar a exception independente de tratamento;
+  }finally{
+    print("Chegou no Finally");
   }
   print("Finished F01"); 
 }
