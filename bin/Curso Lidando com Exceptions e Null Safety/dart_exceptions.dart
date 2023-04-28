@@ -14,6 +14,27 @@ void testingNullSafety(){
   if(randomNumber <= 5){
     myAccount = Account(name: "Kelvin", balance: 700, isAuthenticated: true);
   }
+
+  print(myAccount.runtimeType);
+
+  //Não funciona
+  //print(myAccount.balance);
+
+  //Conversão direta: Má prática
+  //print(myAccount!.balance);
+
+  //Funciona
+  //if (myAccount !=null) {
+  //  print(myAccount.balance);
+  //}else{
+  //  print("Conta Nula");
+  //}
+
+  //Mesmo If com operação ternária
+  //print(myAccount !=null ? myAccount.balance : "Conta nula");
+
+  //Funciona, só imprime o balance se não for null, se for null imprime "null"
+  print(myAccount?.balance);
 }
 
 void main() {
