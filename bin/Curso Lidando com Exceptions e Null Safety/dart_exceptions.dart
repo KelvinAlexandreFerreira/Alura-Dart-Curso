@@ -6,29 +6,35 @@ import 'exceptions/bank_controller_exceptions.dart';
 import 'models/account.dart';
 
 void testingNullSafety(){
-  Account? myAccount;
+  Account? myAccount = Account(name: "Kelvin", balance: 700, isAuthenticated: true);
 
   //Simulando uma comunicação externa
   Random rng = Random();
   int randomNumber = rng.nextInt(10);
   if(randomNumber <= 5){
-    myAccount = Account(name: "Kelvin", balance: 700, isAuthenticated: true);
+    myAccount.createAt = DateTime.now();
   }
 
   print(myAccount.runtimeType);
 
   //Não funciona
   //print(myAccount.balance);
+  print(myAccount.createAt);
+  //print(myAccount.createAt.day);
 
   //Conversão direta: Má prática
   //print(myAccount!.balance);
+  //print(myAccount.createAt!.day);
 
   //Funciona
-  //if (myAccount !=null) {
-  //  print(myAccount.balance);
-  //}else{
-  //  print("Conta Nula");
-  //}
+  if (myAccount !=null) {
+    print(myAccount.balance);
+    if (myAccount.createAt != null) {
+      print(myAccount.createAt!.day);
+    }
+  }else{
+    print("Conta Nula");
+  }
 
   //Mesmo If com operação ternária
   //print(myAccount !=null ? myAccount.balance : "Conta nula");
