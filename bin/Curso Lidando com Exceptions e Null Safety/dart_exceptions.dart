@@ -5,6 +5,10 @@ import 'exceptions/bank_controller_exceptions.dart';
 import 'models/account.dart';
 
 void main() {
+  print("MysTring".runtimeType);
+  print(null.runtimeType);
+  Null;
+
   // Criando o banco
   BankController bankController = BankController();
 
