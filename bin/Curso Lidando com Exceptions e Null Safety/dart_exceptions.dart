@@ -26,31 +26,15 @@ import 'models/account.dart';
 //   print(result);
 // }
 
-void main(){
-  print("Started Main");
-  functionOne();
-  print("Finished Main");
-}
-
-void functionOne(){
-  print("Started F01");
+void main() {
   try {
-    functionTwo();
-  } catch(exception, stackTrace){
-    print(exception);
-    print(stackTrace);
-    rethrow; //É usado para propagar a exception independente de tratamento;
-  }finally{
-    print("Chegou no Finally");
-  }
-  print("Finished F01"); 
+    testFunc();
+  } on Exception catch (e) {
+    print(e.runtimeType);
+  } 
+  print("Nunca chegará aqui");
 }
 
-void functionTwo(){
-  print("Started F02");
-  for (var i = 1 ; i < 5; i++) {
-    print(i); 
-    double amount = double.parse("Not a Number");  
-  }
-  print("Finished F02"); 
+void testFunc(){
+  throw Account(name: "Kelvin", balance: 200, isAuthenticated: true);
 }
