@@ -1,6 +1,7 @@
 
 import 'dart:io';
 
+import 'questions/group_questions.dart';
 import 'questions/time_questions.dart';
 import 'timing/waiting_time.dart';
 
@@ -23,12 +24,13 @@ void main() async {
         usuario.contains('adeus')) {
       a = false;
       print(kelvinBot + ' Até a proxima!!');
+    } else if (GroupQuestions(question: usuario).isThisGroup()) {
+      await BotClock().clock(2);
+      GroupQuestions(question: usuario).groupQuestion();
     } else if (TimeQuestions(usuario).isThisTime()) {
       // verificar antes, assim não fazemos toda a função sem precisar.
       await BotClock().clock(2);
       TimeQuestions(usuario).timeQuestion();
-    } else if (false) {
-      //Basta adicionar novas perguntas aqui!
     } else {
       await BotClock().clock(2);
       print(kelvinBot +
