@@ -12,9 +12,9 @@ void main() async {
 
   var myStream = BotClock.kelvinBotStream(1, 10);
   var subscriber = myStream.listen((event) {
-    print('                KelvinBot is activated for $event seconds');
+    print('                KelvinBot está ativo a $event segundos');
   }, onDone: () {
-    print('KelvinBot is finishing its work, ask the last question!');
+    print('KelvinBot está sendo finalizado, faça a última pergunta!');
     a = false;
   });
 
